@@ -111,7 +111,7 @@ namespace QPM
                 throw new ArgumentNullException(nameof(config));
             // We don't perform any validity here, simply ship it away
             var s = configProvider.ToString(config);
-            var request = new HttpRequestMessage(HttpMethod.Post, $"/{config.Config!.Info!.Id}/{config.Config.Info.Version}")
+            var request = new HttpRequestMessage(HttpMethod.Post, $"{ApiUrl}/{config.Config!.Info!.Id}/{config.Config.Info.Version}")
             {
                 Content = new StringContent(s)
             };
